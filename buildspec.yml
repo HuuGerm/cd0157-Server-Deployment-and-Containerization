@@ -37,6 +37,8 @@ phases:
       - python -m pytest test_main.py 
   build:
     commands:
+      - echo $REPOSITORY_URI
+      - echo $TAG
       - docker build --tag $REPOSITORY_URI:$TAG .
 
   post_build:
